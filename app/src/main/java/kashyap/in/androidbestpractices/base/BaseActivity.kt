@@ -56,7 +56,7 @@ abstract class BaseActivity : AppCompatActivity(), NetworkBroadcast.NetworkChang
     }
 
     fun runNetworkDependentTask(onNetworkAvailable: Runnable, onNetworkUnavailable: Runnable?) {
-        when (isNetworkOnline(this)) {
+        when (isNetworkAvailable) {
             true -> onNetworkAvailable.run()
             false -> if (onNetworkUnavailable != null) {
                 onNetworkUnavailable.run()
