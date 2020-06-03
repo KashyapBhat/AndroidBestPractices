@@ -1,6 +1,7 @@
 package kashyap.`in`.androidbestpractices.network.webservice
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 
@@ -16,6 +17,24 @@ abstract class NetworkBoundResource<ResultType : Any, RequestType : Any> {
 
     private val responseHandler =
         ResponseHandler()
+
+    suspend fun asMutableLiveData(): LiveData<Response<ResultType>> {
+        return MediatorLiveData<Response<ResultType>>().let { data ->
+            data.addSource(loadFromDb()) { responseHandler.handleLoading(it) }
+            try {
+                val apiResponse = createCall()
+                apiResponse.let {
+                    saveCallResult(apiResponse)
+                    data.addSource(loadFromDb()) {
+                        responseHandler.handleSuccess(it)
+                    }
+                }
+            } catch (e: Exception) {
+                data.addSource(loadFromDb()) { responseHandler.handleException(e, it) }
+            }
+            data
+        }
+    }
 
     fun asLiveData(): LiveData<Response<ResultType>> {
         return liveData {
