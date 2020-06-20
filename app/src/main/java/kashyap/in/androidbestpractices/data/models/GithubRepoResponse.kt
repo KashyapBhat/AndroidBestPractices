@@ -4,7 +4,7 @@ import android.os.Parcelable
 import androidx.room.Entity
 import kashyap.`in`.androidbestpractices.common.constants.ID
 import kashyap.`in`.androidbestpractices.common.constants.REPO_DETAILS_TABLE
-import kashyap.`in`.androidbestpractices.ui.ItemsToDisplay
+import kashyap.`in`.androidbestpractices.ui.repodetails.RepoItemsToDisplay
 import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = REPO_DETAILS_TABLE, primaryKeys = [ID])
@@ -56,7 +56,8 @@ data class GithubRepoDetails(
     var teams_url: String? = "",
     var trees_url: String? = "",
     var url: String? = ""
-) : Parcelable, ItemsToDisplay {
+) : Parcelable,
+    RepoItemsToDisplay {
     override fun getShowId(): String {
         return id?.toString() ?: ""
     }

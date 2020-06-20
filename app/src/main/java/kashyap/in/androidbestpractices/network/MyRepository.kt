@@ -9,7 +9,7 @@ import kashyap.`in`.androidbestpractices.injection.ApplicationScope
 import kashyap.`in`.androidbestpractices.network.webservice.ApiService
 import kashyap.`in`.androidbestpractices.network.webservice.NetworkBoundResource
 import kashyap.`in`.androidbestpractices.network.webservice.Response
-import kashyap.`in`.androidbestpractices.utils.isNetworkOnline
+import kashyap.`in`.androidbestpractices.common.utils.isNetworkOnline
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

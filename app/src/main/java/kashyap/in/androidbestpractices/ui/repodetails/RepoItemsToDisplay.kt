@@ -1,6 +1,6 @@
-package kashyap.`in`.androidbestpractices.ui
+package kashyap.`in`.androidbestpractices.ui.repodetails
 
-interface ItemsToDisplay {
+interface RepoItemsToDisplay {
     fun getShowId(): String
     fun getShowName(): String
     fun getShowBackdropPath(): String

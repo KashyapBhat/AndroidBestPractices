@@ -6,9 +6,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kashyap.`in`.androidbestpractices.base.listeners.NetworkBroadcast
-import kashyap.`in`.androidbestpractices.utils.hideKeyboard
-import kashyap.`in`.androidbestpractices.utils.isNetworkOnline
-import kashyap.`in`.androidbestpractices.utils.showKeyboard
+import kashyap.`in`.androidbestpractices.common.utils.hideKeyboard
+import kashyap.`in`.androidbestpractices.common.utils.isNetworkOnline
+import kashyap.`in`.androidbestpractices.common.utils.showKeyboard
 
 abstract class BaseActivity : AppCompatActivity(), NetworkBroadcast.NetworkChangeListener {
 

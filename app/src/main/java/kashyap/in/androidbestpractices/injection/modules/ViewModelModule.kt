@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import kashyap.`in`.androidbestpractices.injection.ViewModelKey
-import kashyap.`in`.androidbestpractices.ui.RepoDetailsViewModel
+import kashyap.`in`.androidbestpractices.ui.repodetails.RepoDetailsViewModel
 
 @Module
 abstract class ViewModelModule {

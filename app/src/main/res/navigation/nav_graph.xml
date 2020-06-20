@@ -8,6 +8,6 @@
             id of the menu item for bottomNavView to navigate-->
     <fragment
         android:id="@+id/repoDetailsFragment"
-        android:name="kashyap.in.androidbestpractices.ui.RepoDetailsFragment"
+        android:name="kashyap.in.androidbestpractices.ui.repodetails.RepoDetailsFragment"
         android:label="RepoDetailsFragment" />
 </navigation>

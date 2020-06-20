@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kashyap.`in`.androidbestpractices.R
-import kashyap.`in`.androidbestpractices.ui.ItemsToDisplay
-import kashyap.`in`.androidbestpractices.ui.ShowAdapter
+import kashyap.`in`.androidbestpractices.ui.repodetails.RepoItemsToDisplay
+import kashyap.`in`.androidbestpractices.ui.repodetails.ShowAdapter
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -24,5 +24,5 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 }
 
 @BindingAdapter("listData")
-fun <T : ItemsToDisplay> bindRecyclerView(recyclerView: RecyclerView, showList: List<T>?) =
+fun <T : RepoItemsToDisplay> bindRecyclerView(recyclerView: RecyclerView, showList: List<T>?) =
     showList?.let { (recyclerView.adapter as ShowAdapter).submitList(it) }

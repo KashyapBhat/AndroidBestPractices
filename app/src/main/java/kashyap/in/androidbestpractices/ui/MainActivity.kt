@@ -1,10 +1,11 @@
-package kashyap.`in`.androidbestpractices
+package kashyap.`in`.androidbestpractices.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import kashyap.`in`.androidbestpractices.R
 import kashyap.`in`.androidbestpractices.base.BaseActivity
-import kashyap.`in`.androidbestpractices.ui.RepoDetailsFragment
+import kashyap.`in`.androidbestpractices.ui.repodetails.RepoDetailsFragment
 
 
 class MainActivity : BaseActivity() {
@@ -16,7 +17,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun openFragment() {
-        val fragment: Fragment = RepoDetailsFragment()
+        val fragment: Fragment =
+            RepoDetailsFragment()
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fr_container, fragment).commit()
     }

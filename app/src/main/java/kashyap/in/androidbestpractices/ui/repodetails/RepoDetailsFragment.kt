@@ -1,4 +1,4 @@
-package kashyap.`in`.androidbestpractices.ui
+package kashyap.`in`.androidbestpractices.ui.repodetails
 
 import android.os.Bundle
 import android.util.Log
@@ -29,7 +29,13 @@ class RepoDetailsFragment : Fragment() {
         (activity?.applicationContext as MyApplication).component?.inject(this)
         binding.repoDetails = viewModel.repoDetailsListData
         val showAdapter =
-            ShowAdapter(ShowClickListener { show -> Log.d("LOGT", show.getShowName()) })
+            ShowAdapter(
+                ShowClickListener { show ->
+                    Log.d(
+                        "LOGT",
+                        show.getShowName()
+                    )
+                })
         binding.rvDetails.adapter = showAdapter
         return binding.root
     }

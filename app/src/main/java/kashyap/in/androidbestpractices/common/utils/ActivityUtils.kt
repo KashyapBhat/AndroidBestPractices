@@ -1,4 +1,4 @@
-package kashyap.`in`.androidbestpractices.utils
+package kashyap.`in`.androidbestpractices.common.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

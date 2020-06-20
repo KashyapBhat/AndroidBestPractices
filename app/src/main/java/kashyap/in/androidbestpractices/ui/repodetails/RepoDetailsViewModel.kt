@@ -1,4 +1,4 @@
-package kashyap.`in`.androidbestpractices.ui
+package kashyap.`in`.androidbestpractices.ui.repodetails
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
