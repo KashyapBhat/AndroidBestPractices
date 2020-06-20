@@ -29,7 +29,7 @@
             android:layout_height="@dimen/_160dp"
             android:scaleType="centerCrop"
             android:src="@drawable/no_image"
-            app:imageUrl="@{show.showBackdropPath}" />
+            app:imageUrl="@{show.imageUrl}" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -64,7 +64,7 @@
             android:layout_marginTop="@dimen/_10dp"
             android:layout_marginBottom="@dimen/_10dp"
             android:gravity="center"
-            android:text="@{show.showName}"
+            android:text="@{show.fullName}"
             android:textAppearance="@style/TextItem" />
 
     </androidx.cardview.widget.CardView>

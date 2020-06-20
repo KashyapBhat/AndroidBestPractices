@@ -66,8 +66,16 @@ data class GithubRepoDetails(
         return name ?: ""
     }
 
-    override fun getShowBackdropPath(): String {
+    override fun getFullName(): String {
+        return full_name ?: ""
+    }
+
+    override fun getImageUrl(): String {
         return ownerDetails?.avatar_url ?: ""
+    }
+
+    override fun getLinkUrl(): String {
+        return ownerDetails?.url ?: ""
     }
 }
 
