@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="show"
+            type="kashyap.in.androidbestpractices.ui.ItemsToDisplay" />
+
+        <variable
+            name="clickListener"
+            type="kashyap.in.androidbestpractices.ui.ShowClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cv_poster"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:elevation="@dimen/_6dp"
+        android:onClick="@{() -> clickListener.onClick(show)}"
+        app:cardCornerRadius="@dimen/_6dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/no_image"
+            app:imageUrl="@{show.showBackdropPath}" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:gravity="center"
+            android:text="@{show.showName}"
+            android:textAppearance="@style/TextItem" />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:gravity="center"
+            android:text="@{show.showId}"
+            android:textAppearance="@style/TextItem" />
+
+        <TextView
+            android:id="@+id/tv_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:gravity="center"
+            android:text="@{show.showName}"
+            android:textAppearance="@style/TextItem" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,5 +1,6 @@
 package kashyap.`in`.androidbestpractices.network.webservice
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
@@ -27,6 +28,7 @@ abstract class NetworkBoundResource<ResultType : Any, RequestType : Any> {
                     saveCallResult(apiResponse)
                     emitSource(
                         loadFromDb().map {
+                            Log.d("Success:", "" + it.toString())
                             responseHandler.handleSuccess(it)
                         }
                     )

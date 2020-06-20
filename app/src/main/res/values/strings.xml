@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidArchitecturalComponents</string>
+    <string name="github_repos">Github Repositories</string>
 </resources>
