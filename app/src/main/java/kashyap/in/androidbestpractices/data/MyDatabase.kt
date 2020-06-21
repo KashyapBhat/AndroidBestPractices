@@ -22,9 +22,4 @@ abstract class MyDatabase : RoomDatabase() {
 //            database.execSQL("ALTER TABLE Name ADD COLUMN Name INTEGER")
 //        }
 //    }
-
-    open fun clearDatabase() {
-        githubRepoDetailsDao().clear()
-    }
-
 }

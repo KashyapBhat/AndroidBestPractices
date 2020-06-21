@@ -26,7 +26,7 @@ class MyRepository @Inject constructor(
         return object : NetworkBoundResource<List<GithubRepoDetails>, List<GithubRepoDetails>>() {
             override fun saveCallResult(item: List<GithubRepoDetails>) {
                 CoroutineScope(Dispatchers.IO).launch {
-                    local.githubRepoDetailsDao().insertAll(*item.toTypedArray())
+                    local.githubRepoDetailsDao().insertAll(*(item.toTypedArray()))
                 }
             }
 
@@ -38,7 +38,7 @@ class MyRepository @Inject constructor(
                 return remote.fetchRepoDetails()
             }
 
-            override fun shouldFetch(data: List<GithubRepoDetails>?): Boolean {
+            override fun shouldFetch(): Boolean {
                 return isNetworkOnline(context = context)
             }
         }.asLiveData()

@@ -15,8 +15,4 @@ interface GithubRepoDetailsDao : BaseDao<GithubRepoDetails> {
 
     @Query("SELECT * FROM $REPO_DETAILS_TABLE WHERE $ID = :userId")
     fun getRepoDetailsWrtUserId(userId: Int): LiveData<GithubRepoDetails>
-
-    @Query("DELETE FROM $REPO_DETAILS_TABLE")
-    fun clear()
-
 }

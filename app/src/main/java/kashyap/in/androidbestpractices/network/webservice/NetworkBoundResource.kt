@@ -13,29 +13,31 @@ abstract class NetworkBoundResource<ResultType : Any, RequestType : Any> {
 
     protected abstract fun saveCallResult(item: RequestType)
 
-    protected abstract fun shouldFetch(data: ResultType?): Boolean
+    protected abstract fun shouldFetch(): Boolean
 
     private val responseHandler =
         ResponseHandler()
 
     fun asLiveData(): LiveData<Response<ResultType>> {
         return liveData {
-            val disposable = emitSource(loadFromDb().map { responseHandler.handleLoading(it) })
-            try {
-                val apiResponse = createCall()
-                apiResponse.let {
-                    disposable.dispose()
-                    saveCallResult(apiResponse)
-                    emitSource(
-                        loadFromDb().map {
-                            Log.d("Success:", "" + it.toString())
-                            responseHandler.handleSuccess(it)
-                        }
-                    )
+            if (shouldFetch()) {
+                val disposable = emitSource(loadFromDb().map { responseHandler.handleLoading(it) })
+                try {
+                    val apiResponse = createCall()
+                    apiResponse.let {
+                        disposable.dispose()
+                        saveCallResult(apiResponse)
+                        emitSource(
+                            loadFromDb().map {
+                                Log.d("Success:", "" + it.toString())
+                                responseHandler.handleSuccess(it)
+                            }
+                        )
+                    }
+                } catch (e: Exception) {
+                    emitSource(loadFromDb().map { responseHandler.handleException(e, it) })
                 }
-            } catch (e: Exception) {
-                emitSource(loadFromDb().map { responseHandler.handleException(e, it) })
-            }
+            } else emitSource(loadFromDb().map { responseHandler.handleSuccess(it) })
         }
     }
 
