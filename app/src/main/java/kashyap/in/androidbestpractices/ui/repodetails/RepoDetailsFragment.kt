@@ -29,7 +29,7 @@ class RepoDetailsFragment : Fragment() {
         binding.lifecycleOwner = this
         (activity?.applicationContext as MyApplication).component?.inject(this)
         binding.repoDetails = viewModel.repoDetailsListData
-        val showAdapter = ShowAdapter(ShowClickListener { show -> openWebsite(show) })
+        val showAdapter = RepoDetailsAdapter(ShowClickListener { show -> openWebsite(show) })
         binding.rvDetails.adapter = showAdapter
         return binding.root
     }

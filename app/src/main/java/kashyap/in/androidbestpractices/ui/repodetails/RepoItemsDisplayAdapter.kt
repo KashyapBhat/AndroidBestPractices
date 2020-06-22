@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import kashyap.`in`.androidbestpractices.databinding.ItemRepoDetailBinding
 
-class ShowAdapter(val clickListener: ShowClickListener) :
+class RepoDetailsAdapter(val clickListener: ShowClickListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<RepoItemsToDisplay>() {
