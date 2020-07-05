@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
     <data>
+
         <variable
-            name="show"
-            type="kashyap.in.androidbestpractices.ui.repodetails.RepoItemsToDisplay" />
+            name="user"
+            type="kashyap.in.androidbestpractices.ui.repodetails.User" />
 
         <variable
             name="clickListener"
@@ -17,19 +19,19 @@
         android:layout_height="@dimen/_160dp"
         android:layout_marginBottom="@dimen/_20dp"
         android:elevation="@dimen/_6dp"
-        android:onClick="@{() -> clickListener.onClick(show)}"
+        android:onClick="@{() -> clickListener.onClick(user)}"
         app:cardCornerRadius="@dimen/_6dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
-            android:id="@+id/iv_poster"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_160dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/no_image"
-            app:imageUrl="@{show.imageUrl}" />
+        <!--        <ImageView-->
+        <!--            android:id="@+id/iv_poster"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="@dimen/_160dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/no_image"-->
+        <!--            app:imageUrl="@{user.imageUrl}" />-->
 
         <TextView
             android:id="@+id/tv_name"
@@ -40,7 +42,7 @@
             android:layout_marginTop="@dimen/_10dp"
             android:layout_marginBottom="@dimen/_10dp"
             android:gravity="center"
-            android:text="@{show.showName}"
+            android:text="@{user.first_name}"
             android:textAppearance="@style/TextItem" />
 
         <TextView
@@ -52,7 +54,7 @@
             android:layout_marginTop="@dimen/_10dp"
             android:layout_marginBottom="@dimen/_10dp"
             android:gravity="center"
-            android:text="@{show.showId}"
+            android:text="@{user.last_name}"
             android:textAppearance="@style/TextItem" />
 
         <TextView
@@ -64,7 +66,7 @@
             android:layout_marginTop="@dimen/_10dp"
             android:layout_marginBottom="@dimen/_10dp"
             android:gravity="center"
-            android:text="@{show.fullName}"
+            android:text="@{user.gender}"
             android:textAppearance="@style/TextItem" />
 
     </androidx.cardview.widget.CardView>

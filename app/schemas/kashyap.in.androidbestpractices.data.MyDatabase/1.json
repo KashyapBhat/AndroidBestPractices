@@ -2,279 +2,69 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "ec72876b22dea671fdfffbf47182a984",
+    "identityHash": "cb70fb125490ba1adfc1d49d1900ed96",
     "entities": [
       {
-        "tableName": "RepoDetails",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`archive_url` TEXT, `assignees_url` TEXT, `blobs_url` TEXT, `branches_url` TEXT, `collaborators_url` TEXT, `comments_url` TEXT, `commits_url` TEXT, `compare_url` TEXT, `contents_url` TEXT, `contributors_url` TEXT, `deployments_url` TEXT, `description` TEXT, `downloads_url` TEXT, `events_url` TEXT, `fork` INTEGER, `forks_url` TEXT, `full_name` TEXT, `git_commits_url` TEXT, `git_refs_url` TEXT, `git_tags_url` TEXT, `hooks_url` TEXT, `html_url` TEXT, `id` INTEGER, `issue_comment_url` TEXT, `issue_events_url` TEXT, `issues_url` TEXT, `keys_url` TEXT, `labels_url` TEXT, `languages_url` TEXT, `merges_url` TEXT, `milestones_url` TEXT, `name` TEXT, `node_id` TEXT, `notifications_url` TEXT, `ownerDetails` TEXT, `pulls_url` TEXT, `releases_url` TEXT, `stargazers_url` TEXT, `statuses_url` TEXT, `subscribers_url` TEXT, `subscription_url` TEXT, `tags_url` TEXT, `teams_url` TEXT, `trees_url` TEXT, `url` TEXT, PRIMARY KEY(`id`))",
+        "tableName": "UserDetailsTable",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`address` TEXT, `dob` TEXT, `email` TEXT, `first_name` TEXT, `gender` TEXT, `id` TEXT NOT NULL, `last_name` TEXT, `phone` TEXT, `status` TEXT, `website` TEXT, PRIMARY KEY(`id`))",
         "fields": [
           {
-            "fieldPath": "archive_url",
-            "columnName": "archive_url",
+            "fieldPath": "address",
+            "columnName": "address",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "assignees_url",
-            "columnName": "assignees_url",
+            "fieldPath": "dob",
+            "columnName": "dob",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "blobs_url",
-            "columnName": "blobs_url",
+            "fieldPath": "email",
+            "columnName": "email",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "branches_url",
-            "columnName": "branches_url",
+            "fieldPath": "first_name",
+            "columnName": "first_name",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "collaborators_url",
-            "columnName": "collaborators_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "comments_url",
-            "columnName": "comments_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "commits_url",
-            "columnName": "commits_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "compare_url",
-            "columnName": "compare_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "contents_url",
-            "columnName": "contents_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "contributors_url",
-            "columnName": "contributors_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "deployments_url",
-            "columnName": "deployments_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "description",
-            "columnName": "description",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "downloads_url",
-            "columnName": "downloads_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "events_url",
-            "columnName": "events_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "fork",
-            "columnName": "fork",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "forks_url",
-            "columnName": "forks_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "full_name",
-            "columnName": "full_name",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "git_commits_url",
-            "columnName": "git_commits_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "git_refs_url",
-            "columnName": "git_refs_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "git_tags_url",
-            "columnName": "git_tags_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "hooks_url",
-            "columnName": "hooks_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "html_url",
-            "columnName": "html_url",
+            "fieldPath": "gender",
+            "columnName": "gender",
             "affinity": "TEXT",
             "notNull": false
           },
           {
             "fieldPath": "id",
             "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": false
+            "affinity": "TEXT",
+            "notNull": true
           },
           {
-            "fieldPath": "issue_comment_url",
-            "columnName": "issue_comment_url",
+            "fieldPath": "last_name",
+            "columnName": "last_name",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "issue_events_url",
-            "columnName": "issue_events_url",
+            "fieldPath": "phone",
+            "columnName": "phone",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "issues_url",
-            "columnName": "issues_url",
+            "fieldPath": "status",
+            "columnName": "status",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "keys_url",
-            "columnName": "keys_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "labels_url",
-            "columnName": "labels_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "languages_url",
-            "columnName": "languages_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "merges_url",
-            "columnName": "merges_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "milestones_url",
-            "columnName": "milestones_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "name",
-            "columnName": "name",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "node_id",
-            "columnName": "node_id",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "notifications_url",
-            "columnName": "notifications_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "ownerDetails",
-            "columnName": "ownerDetails",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "pulls_url",
-            "columnName": "pulls_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "releases_url",
-            "columnName": "releases_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "stargazers_url",
-            "columnName": "stargazers_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "statuses_url",
-            "columnName": "statuses_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "subscribers_url",
-            "columnName": "subscribers_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "subscription_url",
-            "columnName": "subscription_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "tags_url",
-            "columnName": "tags_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "teams_url",
-            "columnName": "teams_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "trees_url",
-            "columnName": "trees_url",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "url",
-            "columnName": "url",
+            "fieldPath": "website",
+            "columnName": "website",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -292,7 +82,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ec72876b22dea671fdfffbf47182a984')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cb70fb125490ba1adfc1d49d1900ed96')"
     ]
   }
 }

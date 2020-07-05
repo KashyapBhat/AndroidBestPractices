@@ -1,20 +1,17 @@
 package kashyap.`in`.androidbestpractices.data
 
-import androidx.annotation.NonNull
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
-import kashyap.`in`.androidbestpractices.data.dao.GithubRepoDetailsDao
-import kashyap.`in`.androidbestpractices.data.models.GithubRepoDetails
+import kashyap.`in`.androidbestpractices.data.dao.UserDetailsDao
+import kashyap.`in`.androidbestpractices.data.entities.UserDetailsEntity
 
 
-@Database(entities = [GithubRepoDetails::class], version = 1)
+@Database(entities = [UserDetailsEntity::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class MyDatabase : RoomDatabase() {
 
-    abstract fun githubRepoDetailsDao(): GithubRepoDetailsDao
+    abstract fun userDetailsDao(): UserDetailsDao
 
 //    DB Migrations
 //    val MIGRATION_1_2: Migration = object : Migration(1, 2) {

@@ -10,13 +10,13 @@
 
         <import type="kashyap.in.androidbestpractices.network.webservice.Response" />
 
-        <import type="kashyap.in.androidbestpractices.data.models.GithubRepoDetails" />
+        <import type="kashyap.in.androidbestpractices.ui.repodetails.User" />
 
         <import type="java.util.List" />
 
         <variable
             name="repoDetails"
-            type="LiveData&lt;Response&lt;List&lt;GithubRepoDetails>>>" />
+            type="LiveData&lt;Response&lt;List&lt;User>>>" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -10,13 +10,13 @@ import kashyap.`in`.androidbestpractices.databinding.ItemRepoDetailBinding
 class RepoDetailsAdapter(val clickListener: ShowClickListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<RepoItemsToDisplay>() {
-        override fun areItemsTheSame(oldItem: RepoItemsToDisplay, newItem: RepoItemsToDisplay): Boolean {
-            return oldItem.getShowId() == newItem.getShowId()
+    private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<User>() {
+        override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
+            return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: RepoItemsToDisplay, newItem: RepoItemsToDisplay): Boolean {
-            return oldItem.getShowName() == newItem.getShowName()
+        override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
+            return oldItem.first_name == newItem.first_name
         }
     }
     private val differ = AsyncListDiffer(this, DIFF_CALLBACK)
@@ -39,21 +39,22 @@ class RepoDetailsAdapter(val clickListener: ShowClickListener) :
         return differ.currentList.size
     }
 
-    fun <T : RepoItemsToDisplay> submitList(list: List<T>) {
+    fun submitList(list: List<User>) {
         differ.submitList(list)
     }
 
 }
 
-class ShowViewHolder(private var binding: ItemRepoDetailBinding) : RecyclerView.ViewHolder(binding.root) {
+class ShowViewHolder(private var binding: ItemRepoDetailBinding) :
+    RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(repoItemsToDisplay: RepoItemsToDisplay, clickListener: ShowClickListener) {
-        binding.show = repoItemsToDisplay
+    fun bind(repoItemsToDisplay: User, clickListener: ShowClickListener) {
+        binding.user = repoItemsToDisplay
         binding.clickListener = clickListener
         binding.executePendingBindings()
     }
 }
 
-class ShowClickListener(val clickListener: (repoItemsToDisplay: RepoItemsToDisplay) -> Unit) {
-    fun onClick(repoItemsToDisplay: RepoItemsToDisplay) = clickListener(repoItemsToDisplay)
+class ShowClickListener(val clickListener: (repoItemsToDisplay: User) -> Unit) {
+    fun onClick(repoItemsToDisplay: User) = clickListener(repoItemsToDisplay)
 }
