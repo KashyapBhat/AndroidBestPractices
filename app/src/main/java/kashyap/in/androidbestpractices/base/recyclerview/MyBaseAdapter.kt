@@ -1,5 +1,6 @@
 package kashyap.`in`.androidbestpractices.base.recyclerview
 
+import android.app.backup.BackupManager.dataChanged
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -9,7 +10,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import kashyap.`in`.androidbestpractices.BR
 
-abstract class MyBaseAdapter(private val clickListener: RVItemClickListener) :
+abstract class MyBaseAdapter(
+    private val clickListener: RVItemClickListener,
+    val dataSetChanged: DataSetChanged?
+) :
     RecyclerView.Adapter<MyBaseAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -33,6 +37,7 @@ abstract class MyBaseAdapter(private val clickListener: RVItemClickListener) :
     private val differ = AsyncListDiffer(this, differCallback)
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        dataSetChanged?.onDataChange(differ.currentList[position], position, itemCount)
         holder.bind(differ.currentList[position], clickListener)
     }
 
@@ -61,5 +66,9 @@ abstract class MyBaseAdapter(private val clickListener: RVItemClickListener) :
 
     class RVItemClickListener(val clickListener: (user: Any) -> Unit) {
         fun onClick(user: Any) = clickListener(user)
+    }
+
+    interface DataSetChanged {
+        fun onDataChange(changedData: Any, position: Int, totalSize: Int)
     }
 }

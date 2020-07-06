@@ -1,10 +1,13 @@
 package kashyap.`in`.androidbestpractices.base
 
+import android.app.Dialog
 import android.content.IntentFilter
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kashyap.`in`.androidbestpractices.R
 import kashyap.`in`.androidbestpractices.base.listeners.NetworkBroadcast
 import kashyap.`in`.androidbestpractices.common.utils.hideKeyboard
 import kashyap.`in`.androidbestpractices.common.utils.isNetworkOnline
@@ -14,6 +17,7 @@ abstract class BaseActivity : AppCompatActivity(), NetworkBroadcast.NetworkChang
 
     lateinit var networkChangeReceiver: NetworkBroadcast
     var isNetworkAvailable: Boolean = false
+    var loadingDialog: Dialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,18 +45,34 @@ abstract class BaseActivity : AppCompatActivity(), NetworkBroadcast.NetworkChang
         showKeyboard(view, this)
     }
 
+    fun showLoadingDialog() {
+        if (loadingDialog == null)
+            loadingDialog = Dialog(this, R.style.FullScreenDialog)
+        loadingDialog?.window?.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        );
+        loadingDialog?.setContentView(R.layout.loading)
+        loadingDialog?.setCanceledOnTouchOutside(false)
+        loadingDialog?.setCancelable(false)
+        loadingDialog?.show()
+
+    }
+
+    fun hideLoadingDialog() {
+        if (loadingDialog?.isShowing == true && !isFinishing) {
+            loadingDialog?.dismiss()
+        }
+    }
+
     override fun onNetworkChanged() {
         isNetworkAvailable = isNetworkOnline(this)
-        if (isNetworkAvailable) {
-            // Hide internet not available
-        } else {
-            // Show internet not available
-        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         unregisterReceiver(networkChangeReceiver)
+        hideLoadingDialog()
     }
 
     fun runNetworkDependentTask(onNetworkAvailable: Runnable, onNetworkUnavailable: Runnable?) {

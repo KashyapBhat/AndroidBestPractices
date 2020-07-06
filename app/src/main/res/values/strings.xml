@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidArchitecturalComponents</string>
+    <string name="app_name">Go Rest Api</string>
     <string name="user_details">User Details</string>
     <string name="please_check_internet">Couldn\'t fetch the data. \nPlease check your internet connection.</string>
 </resources>
