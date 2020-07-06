@@ -28,7 +28,6 @@ class UserDetailsFragment : Fragment() {
         binding.lifecycleOwner = this
         (activity?.applicationContext as MyApplication).component?.inject(this)
         binding.userDetails = viewModel.userDetailsListData
-//        viewModel.userDetailsListData.observe(viewLifecycleOwner, Observer {  })
         val showAdapter = UserDetailsAdapter(ShowClickListener { show -> openWebsite(show) })
         binding.rvDetails.adapter = showAdapter
         return binding.root
