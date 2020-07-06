@@ -9,18 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kashyap.`in`.androidbestpractices.MyApplication
 import kashyap.`in`.androidbestpractices.data.MyDatabase
 import kashyap.`in`.androidbestpractices.databinding.FragmentRepoDetailsBinding
+import kashyap.`in`.androidbestpractices.network.webservice.Response
 import javax.inject.Inject
 
 class RepoDetailsFragment : Fragment() {
-
-    @Inject
-    @JvmField
-    public var myDatabase: MyDatabase? = null
-
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
@@ -38,12 +35,6 @@ class RepoDetailsFragment : Fragment() {
         val showAdapter = RepoDetailsAdapter(ShowClickListener { show -> openWebsite(show) })
         binding.rvDetails.adapter = showAdapter
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val someValue = myDatabase?.userDetailsDao()?.getAllUserDetails()?.value
-        Log.d("MyDatabase", "" + someValue.toString())
     }
 
     private fun openWebsite(show: User) {
