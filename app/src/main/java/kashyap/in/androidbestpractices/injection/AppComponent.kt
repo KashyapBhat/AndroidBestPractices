@@ -7,7 +7,7 @@ import kashyap.`in`.androidbestpractices.data.MyDatabase
 import kashyap.`in`.androidbestpractices.injection.modules.AppModule
 import kashyap.`in`.androidbestpractices.injection.modules.ViewModelModule
 import kashyap.`in`.androidbestpractices.network.MyRepository
-import kashyap.`in`.androidbestpractices.ui.repodetails.RepoDetailsFragment
+import kashyap.`in`.androidbestpractices.ui.userdetails.UserDetailsFragment
 
 @ApplicationScope
 @Component(modules = [AppModule::class, RepositoryModule::class, ViewModelModule::class])
@@ -22,6 +22,6 @@ interface AppComponent {
 
     fun inject(app: MyApplication)
 
-    fun inject(fragment: RepoDetailsFragment)
+    fun inject(fragment: UserDetailsFragment)
 
 }

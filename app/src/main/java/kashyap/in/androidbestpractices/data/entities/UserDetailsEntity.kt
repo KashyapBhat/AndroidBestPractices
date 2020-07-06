@@ -5,7 +5,7 @@ import androidx.lifecycle.Transformations
 import androidx.room.Entity
 import kashyap.`in`.androidbestpractices.common.constants.ID
 import kashyap.`in`.androidbestpractices.common.constants.USER_DETAILS_TABLE
-import kashyap.`in`.androidbestpractices.ui.repodetails.User
+import kashyap.`in`.androidbestpractices.ui.userdetails.User
 
 @Entity(tableName = USER_DETAILS_TABLE, primaryKeys = [ID])
 data class UserDetailsEntity(

@@ -35,7 +35,10 @@ abstract class NetworkBoundResource<ResultType : Any, RequestType : Any> {
                         )
                     }
                 } catch (e: Exception) {
-                    emitSource(loadFromDb().map { responseHandler.handleException(e, it) })
+                    emitSource(loadFromDb().map {
+                        Log.d("Failed:", "" + it.toString())
+                        responseHandler.handleException(e, it)
+                    })
                 }
             } else emitSource(loadFromDb().map { responseHandler.handleSuccess(it) })
         }

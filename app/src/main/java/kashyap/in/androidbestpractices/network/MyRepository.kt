@@ -8,13 +8,10 @@ import kashyap.`in`.androidbestpractices.injection.ApplicationScope
 import kashyap.`in`.androidbestpractices.network.webservice.ApiService
 import kashyap.`in`.androidbestpractices.network.webservice.NetworkBoundResource
 import kashyap.`in`.androidbestpractices.network.webservice.Response
-import kashyap.`in`.androidbestpractices.common.utils.isNetworkOnline
-import kashyap.`in`.androidbestpractices.data.entities.UserDetailsEntity
 import kashyap.`in`.androidbestpractices.data.entities.asDomainModel
 import kashyap.`in`.androidbestpractices.data.models.GoRestResponse
-import kashyap.`in`.androidbestpractices.data.models.UserDetails
 import kashyap.`in`.androidbestpractices.data.models.asUserEntities
-import kashyap.`in`.androidbestpractices.ui.repodetails.User
+import kashyap.`in`.androidbestpractices.ui.userdetails.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,7 +24,7 @@ class MyRepository @Inject constructor(
     @ApplicationContext val context: Context
 ) {
 
-    suspend fun loadRepoDetails(): LiveData<Response<List<User>>> {
+    suspend fun loadUserDetails(): LiveData<Response<List<User>>> {
         return object :
             NetworkBoundResource<List<User>, GoRestResponse>() {
             override fun saveCallResult(item: GoRestResponse) {

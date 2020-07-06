@@ -1,4 +1,4 @@
-package kashyap.`in`.androidbestpractices.ui.repodetails
+package kashyap.`in`.androidbestpractices.ui.userdetails
 
 data class User(
     var id: String? = "",

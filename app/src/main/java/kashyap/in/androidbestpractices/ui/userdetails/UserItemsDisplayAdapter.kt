@@ -1,13 +1,13 @@
-package kashyap.`in`.androidbestpractices.ui.repodetails
+package kashyap.`in`.androidbestpractices.ui.userdetails
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import kashyap.`in`.androidbestpractices.databinding.ItemRepoDetailBinding
+import kashyap.`in`.androidbestpractices.databinding.ItemUserDetailBinding
 
-class RepoDetailsAdapter(val clickListener: ShowClickListener) :
+class UserDetailsAdapter(val clickListener: ShowClickListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<User>() {
@@ -22,7 +22,7 @@ class RepoDetailsAdapter(val clickListener: ShowClickListener) :
     private val differ = AsyncListDiffer(this, DIFF_CALLBACK)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ShowViewHolder(ItemRepoDetailBinding.inflate(LayoutInflater.from(parent.context)))
+        return ShowViewHolder(ItemUserDetailBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -41,7 +41,7 @@ class RepoDetailsAdapter(val clickListener: ShowClickListener) :
 
 }
 
-class ShowViewHolder(private var binding: ItemRepoDetailBinding) :
+class ShowViewHolder(private var binding: ItemUserDetailBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(user: User, clickListener: ShowClickListener) {
@@ -51,6 +51,6 @@ class ShowViewHolder(private var binding: ItemRepoDetailBinding) :
     }
 }
 
-class ShowClickListener(val clickListener: (repoItemsToDisplay: User) -> Unit) {
-    fun onClick(repoItemsToDisplay: User) = clickListener(repoItemsToDisplay)
+class ShowClickListener(val clickListener: (user: User) -> Unit) {
+    fun onClick(user: User) = clickListener(user)
 }

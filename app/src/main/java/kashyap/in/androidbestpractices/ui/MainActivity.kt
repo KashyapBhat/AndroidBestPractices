@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import kashyap.`in`.androidbestpractices.R
 import kashyap.`in`.androidbestpractices.base.BaseActivity
-import kashyap.`in`.androidbestpractices.ui.repodetails.RepoDetailsFragment
+import kashyap.`in`.androidbestpractices.ui.userdetails.UserDetailsFragment
 
 
 class MainActivity : BaseActivity() {
@@ -18,7 +18,7 @@ class MainActivity : BaseActivity() {
 
     private fun openFragment() {
         val fragment: Fragment =
-            RepoDetailsFragment()
+            UserDetailsFragment()
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fr_container, fragment).commit()
     }

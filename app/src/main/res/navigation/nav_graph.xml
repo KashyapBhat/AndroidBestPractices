@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/repoDetailsFragment">
+    app:startDestination="@id/userDetailsFragment">
 
     <!--    id of the destination should match the
             id of the menu item for bottomNavView to navigate-->
     <fragment
-        android:id="@+id/repoDetailsFragment"
-        android:name="kashyap.in.androidbestpractices.ui.repodetails.RepoDetailsFragment"
+        android:id="@+id/userDetailsFragment"
+        android:name="kashyap.in.androidbestpractices.ui.userdetails.UserDetailsFragment"
         android:label="RepoDetailsFragment" />
 </navigation>

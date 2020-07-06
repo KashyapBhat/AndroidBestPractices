@@ -3,11 +3,11 @@
     <data>
         <variable
             name="user"
-            type="kashyap.in.androidbestpractices.ui.repodetails.User" />
+            type="kashyap.in.androidbestpractices.ui.userdetails.User" />
 
         <variable
             name="clickListener"
-            type="kashyap.in.androidbestpractices.ui.repodetails.ShowClickListener" />
+            type="kashyap.in.androidbestpractices.ui.userdetails.ShowClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
