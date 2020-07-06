@@ -29,18 +29,21 @@ abstract class NetworkBoundResource<ResultType : Any, RequestType : Any> {
                         saveCallResult(apiResponse)
                         emitSource(
                             loadFromDb().map {
-                                Log.d("Success:", "" + it.toString())
+                                Log.d("NetworkBoundResource ", "Success: $it")
                                 responseHandler.handleSuccess(it)
                             }
                         )
                     }
                 } catch (e: Exception) {
                     emitSource(loadFromDb().map {
-                        Log.d("Failed:", "" + it.toString())
+                        Log.d("NetworkBoundResource", "Exception: $it")
                         responseHandler.handleException(e, it)
                     })
                 }
-            } else emitSource(loadFromDb().map { responseHandler.handleSuccess(it) })
+            } else emitSource(loadFromDb().map {
+                Log.d("NetworkBoundResource", "No Internet: $it")
+                responseHandler.handleSuccess(it)
+            })
         }
     }
 

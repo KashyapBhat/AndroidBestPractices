@@ -39,7 +39,7 @@ class MyRepository @Inject constructor(
             }
 
             override suspend fun createCall(): GoRestResponse {
-                return remote.fetchRepoDetails()
+                return remote.fetchGoRestResponse()
             }
 
             override fun shouldFetch(): Boolean {

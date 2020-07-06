@@ -8,7 +8,7 @@ import kashyap.`in`.androidbestpractices.base.BaseActivity
 import kashyap.`in`.androidbestpractices.ui.userdetails.UserDetailsFragment
 
 
-class MainActivity : BaseActivity() {
+class GoRestActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

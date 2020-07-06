@@ -6,9 +6,8 @@ import androidx.room.TypeConverters
 import kashyap.`in`.androidbestpractices.data.dao.UserDetailsDao
 import kashyap.`in`.androidbestpractices.data.entities.UserDetailsEntity
 
-
+@TypeConverters(CustomConverters::class)
 @Database(entities = [UserDetailsEntity::class], version = 1)
-@TypeConverters(Converters::class)
 abstract class MyDatabase : RoomDatabase() {
 
     abstract fun userDetailsDao(): UserDetailsDao

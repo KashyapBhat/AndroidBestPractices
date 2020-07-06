@@ -36,12 +36,11 @@ class UserDetailsFragment : Fragment() {
                 if (user is User)
                     showId(user)
             })
-//        val showAdapter = UserDetailsAdapter(ShowClickListener { user -> showId(user) })
         binding.rvDetails.adapter = userAdapter
         return binding.root
     }
 
     private fun showId(user: User) {
-        Toast.makeText(context, "User Id=" + user.id, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "User Id=" + user.id, Toast.LENGTH_SHORT).show()
     }
 }

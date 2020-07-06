@@ -62,5 +62,4 @@ abstract class MyBaseAdapter(private val clickListener: RVItemClickListener) :
     class RVItemClickListener(val clickListener: (user: Any) -> Unit) {
         fun onClick(user: Any) = clickListener(user)
     }
-
 }

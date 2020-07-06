@@ -6,5 +6,5 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET("public-api/users")
-    suspend fun fetchRepoDetails(): GoRestResponse
+    suspend fun fetchGoRestResponse(): GoRestResponse
 }

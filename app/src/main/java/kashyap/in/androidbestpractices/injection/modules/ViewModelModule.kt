@@ -14,7 +14,7 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(UserDetailsViewModel::class)
-    abstract fun bindRepoDetailsViewModel(userDetailsViewModel: UserDetailsViewModel): ViewModel
+    abstract fun bindUserDetailsViewModel(userDetailsViewModel: UserDetailsViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory

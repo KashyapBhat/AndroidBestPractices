@@ -9,5 +9,5 @@
     <fragment
         android:id="@+id/userDetailsFragment"
         android:name="kashyap.in.androidbestpractices.ui.userdetails.UserDetailsFragment"
-        android:label="RepoDetailsFragment" />
+        android:label="UserDetailsFragment" />
 </navigation>
