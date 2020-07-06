@@ -1,4 +1,4 @@
-package kashyap.`in`.androidbestpractices.base
+package kashyap.`in`.androidbestpractices.base.recyclerview
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
