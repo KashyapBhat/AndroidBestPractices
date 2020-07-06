@@ -22,16 +22,12 @@ class RepoDetailsAdapter(val clickListener: ShowClickListener) :
     private val differ = AsyncListDiffer(this, DIFF_CALLBACK)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ShowViewHolder(
-            ItemRepoDetailBinding.inflate(LayoutInflater.from(parent.context))
-        )
+        return ShowViewHolder(ItemRepoDetailBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is ShowViewHolder -> {
-                holder.bind(differ.currentList[position], clickListener)
-            }
+            is ShowViewHolder -> holder.bind(differ.currentList[position], clickListener)
         }
     }
 
@@ -48,8 +44,8 @@ class RepoDetailsAdapter(val clickListener: ShowClickListener) :
 class ShowViewHolder(private var binding: ItemRepoDetailBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(repoItemsToDisplay: User, clickListener: ShowClickListener) {
-        binding.user = repoItemsToDisplay
+    fun bind(user: User, clickListener: ShowClickListener) {
+        binding.user = user
         binding.clickListener = clickListener
         binding.executePendingBindings()
     }
