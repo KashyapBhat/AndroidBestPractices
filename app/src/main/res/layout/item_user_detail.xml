@@ -5,12 +5,12 @@
     <data>
 
         <variable
-            name="user"
+            name="obj"
             type="kashyap.in.androidbestpractices.ui.userdetails.User" />
 
         <variable
             name="clickListener"
-            type="kashyap.in.androidbestpractices.ui.userdetails.ShowClickListener" />
+            type="kashyap.in.androidbestpractices.base.recyclerview.MyBaseAdapter.RVItemClickListener" />
     </data>
 
     <LinearLayout
@@ -18,15 +18,14 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true">
 
-        <androidx.cardview.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/cv_poster"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_20dp"
             android:elevation="@dimen/_6dp"
-            android:onClick="@{() -> clickListener.onClick(user)}"
+            android:onClick="@{() -> clickListener.onClick(obj)}"
             android:outlineAmbientShadowColor="#666666"
             android:outlineSpotShadowColor="#666666"
             app:cardCornerRadius="@dimen/_6dp">
@@ -44,7 +43,7 @@
                     android:layout_marginStart="@dimen/_20dp"
                     android:layout_marginTop="@dimen/_10dp"
                     android:layout_marginBottom="@dimen/_10dp"
-                    android:text="@{`First Name: `.concat(user.first_name)}"
+                    android:text="@{`First Name: `.concat(obj.first_name)}"
                     android:textAppearance="@style/TextItem"
                     tools:text="Kashyap" />
 
@@ -57,7 +56,7 @@
                     android:layout_marginStart="@dimen/_20dp"
                     android:layout_marginTop="@dimen/_10dp"
                     android:layout_marginBottom="@dimen/_10dp"
-                    android:text="@{`Last Name: `.concat(user.last_name)}"
+                    android:text="@{`Last Name: `.concat(obj.last_name)}"
                     android:textAppearance="@style/TextItem"
                     tools:text="Bhat" />
 
@@ -70,7 +69,7 @@
                     android:layout_marginStart="@dimen/_20dp"
                     android:layout_marginTop="@dimen/_10dp"
                     android:layout_marginBottom="@dimen/_10dp"
-                    android:text="@{`Gender: `.concat(user.gender)}"
+                    android:text="@{`Gender: `.concat(obj.gender)}"
                     android:textAppearance="@style/TextItem"
                     tools:text="Male" />
             </RelativeLayout>

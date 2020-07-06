@@ -6,8 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kashyap.`in`.androidbestpractices.R
-import kashyap.`in`.androidbestpractices.ui.userdetails.UserDetailsAdapter
-import kashyap.`in`.androidbestpractices.ui.userdetails.User
+import kashyap.`in`.androidbestpractices.base.recyclerview.MyBaseAdapter
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -24,5 +23,5 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 }
 
 @BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, showList: List<User>?) =
-    showList?.let { (recyclerView.adapter as UserDetailsAdapter).submitList(it) }
+fun bindRecyclerView(recyclerView: RecyclerView, showList: List<Any>?) =
+    showList?.let { (recyclerView.adapter as MyBaseAdapter).submitList(it) }
