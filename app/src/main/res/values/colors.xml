@@ -7,4 +7,5 @@
     <color name="background">#F8F8F8</color>
     <color name="header_text">#212121</color>
     <color name="text_black">#222222</color>
+    <color name="text_white">#ffffff</color>
 </resources>

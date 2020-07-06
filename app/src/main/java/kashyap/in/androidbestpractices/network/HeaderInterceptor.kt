@@ -16,9 +16,6 @@ class HeaderInterceptor(val context: Context) : Interceptor {
                 .addHeader("Authorization", BuildConfig.AUTH_KEY)
                 .build()
         )
-        Log.d("Response:", "" + response.peekBody(2048).string())
-        Log.d("Response:", "" + response.isSuccessful)
-        Log.d("Response:", "" + response.code())
         response
     }
 }

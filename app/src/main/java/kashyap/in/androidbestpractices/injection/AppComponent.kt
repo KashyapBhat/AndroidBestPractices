@@ -5,6 +5,7 @@ import dagger.Component
 import kashyap.`in`.androidbestpractices.MyApplication
 import kashyap.`in`.androidbestpractices.data.MyDatabase
 import kashyap.`in`.androidbestpractices.injection.modules.AppModule
+import kashyap.`in`.androidbestpractices.injection.modules.RepositoryModule
 import kashyap.`in`.androidbestpractices.injection.modules.ViewModelModule
 import kashyap.`in`.androidbestpractices.network.MyRepository
 import kashyap.`in`.androidbestpractices.ui.userdetails.UserDetailsFragment

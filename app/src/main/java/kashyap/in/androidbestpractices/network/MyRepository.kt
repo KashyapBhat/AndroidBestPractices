@@ -2,6 +2,7 @@ package kashyap.`in`.androidbestpractices.network
 
 import android.content.Context
 import androidx.lifecycle.LiveData
+import kashyap.`in`.androidbestpractices.common.utils.isNetworkOnline
 import kashyap.`in`.androidbestpractices.data.MyDatabase
 import kashyap.`in`.androidbestpractices.injection.ApplicationContext
 import kashyap.`in`.androidbestpractices.injection.ApplicationScope
@@ -42,7 +43,7 @@ class MyRepository @Inject constructor(
             }
 
             override fun shouldFetch(): Boolean {
-                return true
+                return isNetworkOnline(context)
             }
         }.asLiveData()
     }

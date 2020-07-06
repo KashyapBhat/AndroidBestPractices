@@ -17,8 +17,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun openFragment() {
-        val fragment: Fragment =
-            UserDetailsFragment()
+        val fragment: Fragment = UserDetailsFragment()
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fr_container, fragment).commit()
     }
