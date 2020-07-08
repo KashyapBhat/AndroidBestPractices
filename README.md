@@ -9,7 +9,8 @@ This application,
 ### Using:
 Kotlin, Dagger2, Retrofit, okhttp, RoomDB, Coroutines, RxJava, LiveData, Data Binding, MVVM, Constraint Layout
 
-Please find the demo video here: https://drive.google.com/file/d/1sImAzeeVNyNi1TVFzumPwIfan6u_4ZIa/view?usp=sharing
+
+Demo [here](https://drive.google.com/file/d/1sImAzeeVNyNi1TVFzumPwIfan6u_4ZIa/view?usp=sharing)
 
 License
 =======
