@@ -1,13 +1,12 @@
 # AndroidBestPractices
 
 ### Overview:
-
 This application,
 * Fetches the data from https://gorest.co.in/public-api/users 
 * Stores data in DB and checks for network availability and fetches from db if network is not available.
 * Shows the first name, last name and gender of each user in a recyclerview.
 
-Using:
+### Using:
 Kotlin, Dagger2, Retrofit, okhttp, RoomDB, Coroutines, RxJava, LiveData, Data Binding, MVVM, Constraint Layout
 
 Please find the demo video here: https://drive.google.com/file/d/1sImAzeeVNyNi1TVFzumPwIfan6u_4ZIa/view?usp=sharing
