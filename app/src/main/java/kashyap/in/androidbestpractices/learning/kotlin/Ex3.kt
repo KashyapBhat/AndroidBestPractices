@@ -18,7 +18,7 @@ class ExampleActivity : Activity(), View.OnClickListener {
 
     private fun synthetics() {
 //        import kotlinx.android.synthetic.main.activity_main.llBody
-        llMain?.visibility = View.GONE
+//        llMain?.visibility = View.GONE
     }
 
     // Example this project main activity
@@ -31,7 +31,7 @@ class ExampleActivity : Activity(), View.OnClickListener {
 //            }
 //        });
 
-        btNext.setOnClickListener { }
+//        btNext.setOnClickListener { }
     }
 
     private fun retryUploadDialog(context: Context) {
