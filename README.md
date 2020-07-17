@@ -1,12 +1,12 @@
 # AndroidBestPractices
 
 ### Overview:
-This application,
-* Fetches the data from https://gorest.co.in/public-api/users 
+Application
+* Fetches the data from https://gorest.co.in/public-api/users
 * Stores data in DB and checks for network availability and fetches from db if network is not available.
 * Shows the first name, last name and gender of each user in a recyclerview.
 
-### Using:
+### Using: [Android Architecture Components](https://developer.android.com/topic/libraries/architecture)
 
 * Kotlin 
 * Data Binding
