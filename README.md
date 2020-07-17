@@ -7,7 +7,18 @@ This application,
 * Shows the first name, last name and gender of each user in a recyclerview.
 
 ### Using:
-Kotlin, Dagger2, Retrofit, okhttp, RoomDB, Coroutines, RxJava, LiveData, Data Binding, MVVM, Constraint Layout
+
+* Kotlin 
+* Data Binding
+* Dagger2 
+* MVVM
+* LiveData
+* RoomDB
+* Coroutines
+* Retrofit
+* okhttp
+* AndroidKTX
+* ConstraintLayout
 
 
 Demo [here](https://drive.google.com/file/d/1sImAzeeVNyNi1TVFzumPwIfan6u_4ZIa/view?usp=sharing)
