@@ -7,3 +7,10 @@ enum class ErrorCodes(val code: Int, val message: String) {
     UnAuthorised(401, "Unauthorised"),
     NotFound(404, "Not found")
 }
+
+const val AUTH_KEY = "access-token"
+const val FORMAT = "_format"
+
+const val CONNECT_TIMEOUT: Long = 60 * 1000
+const val READ_TIMEOUT: Long = 60 * 1000
+const val WRITE_TIMEOUT: Long = 60 * 1000

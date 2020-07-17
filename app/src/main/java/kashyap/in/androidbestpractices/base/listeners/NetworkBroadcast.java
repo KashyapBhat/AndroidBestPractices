@@ -6,7 +6,7 @@ import android.content.Intent;
 
 public class NetworkBroadcast extends BroadcastReceiver {
 
-    private NetworkChangeListener networkChangeListener;
+    NetworkChangeListener networkChangeListener;
 
     @Override
     public void onReceive(Context context, Intent intent) {

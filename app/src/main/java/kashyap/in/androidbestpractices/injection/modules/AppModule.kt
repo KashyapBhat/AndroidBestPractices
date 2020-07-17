@@ -8,12 +8,12 @@ import kashyap.`in`.androidbestpractices.injection.ApplicationContext
 import kashyap.`in`.androidbestpractices.injection.ApplicationScope
 
 @Module
-class AppModule(var mineApp: MyApplication) {
+class AppModule(var myApp: MyApplication) {
 
     @ApplicationContext
     @ApplicationScope
     @Provides
     fun getContext(): Context{
-        return mineApp
+        return myApp
     }
 }

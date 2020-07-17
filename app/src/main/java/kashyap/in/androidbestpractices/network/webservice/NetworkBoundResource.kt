@@ -1,5 +1,6 @@
 package kashyap.`in`.androidbestpractices.network.webservice
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.liveData
@@ -13,7 +14,7 @@ abstract class NetworkBoundResource<ResultType : Any, RequestType : Any> {
 
     protected abstract fun saveCallResult(item: RequestType)
 
-    protected abstract fun shouldFetch(data: ResultType?): Boolean
+    protected abstract fun shouldFetch(): Boolean
 
     private val responseHandler =
         ResponseHandler()
@@ -38,21 +39,30 @@ abstract class NetworkBoundResource<ResultType : Any, RequestType : Any> {
 
     fun asLiveData(): LiveData<Response<ResultType>> {
         return liveData {
-            val disposable = emitSource(loadFromDb().map { responseHandler.handleLoading(it) })
-            try {
-                val apiResponse = createCall()
-                apiResponse.let {
-                    disposable.dispose()
-                    saveCallResult(apiResponse)
-                    emitSource(
-                        loadFromDb().map {
-                            responseHandler.handleSuccess(it)
-                        }
-                    )
+            if (shouldFetch()) {
+                val disposable = emitSource(loadFromDb().map { responseHandler.handleLoading(it) })
+                try {
+                    val apiResponse = createCall()
+                    apiResponse.let {
+                        disposable.dispose()
+                        saveCallResult(apiResponse)
+                        emitSource(
+                            loadFromDb().map {
+                                Log.d("NetworkBoundResource ", "Success: $it")
+                                responseHandler.handleSuccess(it)
+                            }
+                        )
+                    }
+                } catch (e: Exception) {
+                    emitSource(loadFromDb().map {
+                        Log.d("NetworkBoundResource", "Exception: $it")
+                        responseHandler.handleException(e, it)
+                    })
                 }
-            } catch (e: Exception) {
-                emitSource(loadFromDb().map { responseHandler.handleException(e, it) })
-            }
+            } else emitSource(loadFromDb().map {
+                Log.d("NetworkBoundResource", "No Internet: $it")
+                responseHandler.handleSuccess(it)
+            })
         }
     }
 
